@@ -5,9 +5,9 @@ using UnityEngine;
 public class RacingCashFactory : MonoBehaviour
 {    
     // Factory operates on server side
-    public float spawnTime = 1f;
-    public float xSpawnRange = 25f;
-    public float zSpawnRange = 25f;
+    public float spawnTime = .5f;
+    public float xSpawnRange = 13f;
+    public float zSpawnRange = 13f;
 
     public GameObject m_CashPrefab;
 

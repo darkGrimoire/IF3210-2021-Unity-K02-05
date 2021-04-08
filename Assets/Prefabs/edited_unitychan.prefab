@@ -5353,6 +5353,8 @@ GameObject:
   - component: {fileID: 4031952659425398785}
   - component: {fileID: 7350728624408089061}
   - component: {fileID: 4017061637970198557}
+  - component: {fileID: 7644476403622471042}
+  - component: {fileID: 770595433366576128}
   m_Layer: 0
   m_Name: edited_unitychan
   m_TagString: Untagged
@@ -5498,14 +5500,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc99fafd6ecf4b94cb8d9686a30e979d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   animSpeed: 1.5
   lookSmoother: 3
   useCurves: 1
   useCurvesHeight: 0.5
+  m_TankMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExplosionRadius: 3
   forwardSpeed: 7
   backwardSpeed: 2
   rotateSpeed: 2
   jumpPower: 3
+--- !u!136 &7644476403622471042
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645194439778963190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.5
+  m_Height: 1.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.75, z: 0}
+--- !u!114 &770595433366576128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6645194439778963190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1549f109e87f40c4684bb4a88cd5015e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  lifeTime: 20
+  rotation: 0.5
+  m_TankMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_ExplosionRadius: 3
 --- !u!1 &6645194439778963360
 GameObject:
   m_ObjectHideFlags: 0

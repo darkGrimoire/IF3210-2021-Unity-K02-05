@@ -59,13 +59,19 @@ public class ShellExplosion : NetworkBehaviour
             targetHealth.RpcTakeDamage (damage);
         }
 
+        RpcExplodeFX();
+
         // Unparent the particles from the shell.
         m_ExplosionParticles.transform.parent = null;
 
         // Play the particle system.
+
         m_ExplosionParticles.Play();
 
         // Play the explosion sound effect.
+
+        m_ExplosionAudio.volume = PlayerPrefs.GetFloat("volMusic");
+
         m_ExplosionAudio.Play();
 
         // Once the particles have finished, destroy the gameobject they are on.
@@ -75,6 +81,22 @@ public class ShellExplosion : NetworkBehaviour
         NetworkServer.Destroy(gameObject);
     }
 
+    [ClientRpc]
+    void RpcExplodeFX()
+    {
+        // Unparent the particles from the shell.
+        m_ExplosionParticles.transform.parent = null;
+
+        // Play the particle system.
+
+        m_ExplosionParticles.Play();
+
+        // Play the explosion sound effect.
+
+        m_ExplosionAudio.volume = PlayerPrefs.GetFloat("volMusic");
+
+        m_ExplosionAudio.Play();
+    }
 
     private float CalculateDamage (Vector3 targetPosition)
     {

@@ -8,7 +8,7 @@ public class TankCash : NetworkBehaviour
     public int m_StartingCash = 100;
     public Text m_CashText;
 
-    private float m_CurrentCash;
+    private int m_CurrentCash;
 
     private void Start()
     {
@@ -21,6 +21,11 @@ public class TankCash : NetworkBehaviour
     private void SetCashUI()
     {
         m_CashText.text = m_CurrentCash.ToString("#,#");
+    }
+
+    public int getCash()
+    {
+        return m_CurrentCash;
     }
 
     public void Add(int amount)
@@ -44,5 +49,13 @@ public class TankCash : NetworkBehaviour
         if (!isLocalPlayer) return;
 
         Add(amount);
+    }
+
+    [ClientRpc]
+    public void RpcSubtract(int amount)
+    {
+        if (!isLocalPlayer) return;
+
+        Subtract(amount);
     }
 }

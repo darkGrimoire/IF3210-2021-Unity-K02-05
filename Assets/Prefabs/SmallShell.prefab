@@ -235,7 +235,7 @@ MonoBehaviour:
   m_MaxDamage: 75
   m_ExplosionForce: 1000
   m_MaxLifeTime: 2
-  m_ExplosionRadius: 5
+  m_ExplosionRadius: 10
 --- !u!82 &8408748061066747012
 AudioSource:
   m_ObjectHideFlags: 0

@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb45e0ebf02f4a549beb884bbbb03212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dontDestroyOnLoad: 1
+  dontDestroyOnLoad: 0
   runInBackground: 1
   autoStartServerBuild: 1
   showDebugMessages: 0
@@ -292,6 +292,8 @@ MonoBehaviour:
   - {fileID: 290480440016581278, guid: 44faf4cd0e58c4a428731280b59df855, type: 3}
   - {fileID: 2911027888483529496, guid: d6e757c0744e4c641b6a2c0778c7a32f, type: 3}
   - {fileID: 8324294630043493246, guid: 778c2cd44b2b59e4d9cc871afeee1a86, type: 3}
+  - {fileID: 6645194439778963190, guid: 678615b1844964f4983d05eb17fa401d, type: 3}
+  - {fileID: 465502940472153582, guid: 1ab4892b0ef7008428c81b05398856c3, type: 3}
   m_NumRoundsToWin: 5
   m_StartDelay: 3
   m_EndDelay: 3
@@ -329,7 +331,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24328132, guid: 86a7353f2579d476fbaa7f161c2e5d00,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8ce5d020a687c314891341b4126d1de2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -822,7 +824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  spawnTime: 3
+  spawnTime: 1
   xSpawnRange: 42
   zSpawnRange: 42
 --- !u!4 &1155714321
@@ -948,6 +950,10 @@ MonoBehaviour:
   pools:
   - tag: Cash
     prefab: {fileID: 8324294630043493246, guid: 778c2cd44b2b59e4d9cc871afeee1a86,
+      type: 3}
+    size: 150
+  - tag: Character
+    prefab: {fileID: 6645194439778963190, guid: 678615b1844964f4983d05eb17fa401d,
       type: 3}
     size: 150
 --- !u!4 &1358625885

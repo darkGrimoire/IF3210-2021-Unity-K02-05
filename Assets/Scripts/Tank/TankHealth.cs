@@ -45,6 +45,7 @@ public class TankHealth : NetworkBehaviour
     public void RpcTakeDamage (float amount)
     {
         // Reduce current health by the amount of damage done.
+        Debug.Log(amount);
         m_CurrentHealth -= amount;
 
         // Change the UI elements appropriately.

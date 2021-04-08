@@ -2,10 +2,10 @@ using System.Collections;
 using UnityEngine;
 using Mirror;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class GameManager : NetworkManager
 {
-
     // Server Side
     [Header("Server Side")]
     public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
@@ -28,6 +28,13 @@ public class GameManager : NetworkManager
     private TankController m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won.
     private TankController m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
 
+    private AudioSource bgSound;
+
+    public void Start(){
+        bgSound = GetComponent<AudioSource>();
+        bgSound.volume = PlayerPrefs.GetFloat("volMusic");
+        bgSound.Play();
+    }
 
     public override void OnServerAddPlayer(NetworkConnection conn)
     {
@@ -39,7 +46,7 @@ public class GameManager : NetworkManager
         //SetCameraTargets();
 
         // Once the tanks have been created and the camera is using them as targets, start the game.
-        if (numPlayers == 2)
+        if (numPlayers == 3)
         {
             StartCoroutine(GameLoop());
         }
@@ -81,7 +88,10 @@ public class GameManager : NetworkManager
         if (m_GameWinner != null)
         {
             // If there is a game winner, restart the level.
-            Application.LoadLevel (Application.loadedLevel);
+            ServerChangeScene("MainMenu");
+            //StopHost();
+            Shutdown();
+            SceneManager.LoadSceneAsync(0);
         }
         else
         {
@@ -90,8 +100,6 @@ public class GameManager : NetworkManager
             StartCoroutine (GameLoop ());
         }
     }
-
-
     private IEnumerator RoundStarting ()
     {
         // As soon as the round starts reset the tanks and make sure they can't move.

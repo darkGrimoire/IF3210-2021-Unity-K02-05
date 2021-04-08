@@ -1,39 +1,7 @@
-# ===========================
-# Default Collab Ignore Rules
-# ===========================
-
-# OS Generated
-# ============
-.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-[Tt]humbs.db
-[Dd]esktop.ini
-
-# Visual Studio / MonoDevelop generated
-# =====================================
-[Ee]xported[Oo]bj/
-*.userprefs
-*.csproj
-*.pidb
-*.suo
-*.sln
-*.user
-*.unityproj
-*.booproj
-
-# Unity generated
-# ===============
-[Oo]bj/
-[Bb]uild
-sysinfo.txt
-*.stackdump
-
-# Unity.gitignore
-# ===============
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+#
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -101,8 +69,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-
-# Mirror
-/[Aa]ssets/[Mm]irror/[Ee]xamples/
-
-.vscode

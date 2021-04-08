@@ -15,6 +15,7 @@ public class RacingTankCash : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(m_StartingCash);
         m_CurrentCash = m_StartingCash;
         m_CashText = GameObject.Find("CashText").GetComponent<Text>();
 
@@ -25,7 +26,6 @@ public class RacingTankCash : MonoBehaviour
     {
         m_CashText.text = m_CurrentCash.ToString("#,#");
     }
-
 
     public void Add(int amount)
     {
@@ -42,10 +42,4 @@ public class RacingTankCash : MonoBehaviour
         }
     }
 
-    // public void RpcAdd(int amount)
-    // {
-    //     if (!isLocalPlayer) return;
-
-    //     Add(amount);
-    // }
 }

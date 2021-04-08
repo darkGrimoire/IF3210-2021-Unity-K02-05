@@ -885,8 +885,6 @@ MonoBehaviour:
     type: 3}
   m_SmallShell: {fileID: 461015294047544168, guid: 1ab4892b0ef7008428c81b05398856c3,
     type: 3}
-  m_Summon: {fileID: 6645194439775939780, guid: 678615b1844964f4983d05eb17fa401d,
-    type: 3}
   m_FireTransform: {fileID: 3796103704262253966}
   m_SummonTransform: {fileID: 985530150191761255}
   m_FireSmallTransform: {fileID: 1916699754552570830}
@@ -1361,7 +1359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8851429747585382613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.33, y: 0.22, z: 0}
+  m_LocalPosition: {x: 4.22, y: 0.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 519413996952044596}

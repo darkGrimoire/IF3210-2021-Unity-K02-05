@@ -5,12 +5,12 @@ using Mirror;
 
 public class RacingCash : MonoBehaviour
 {
-    public float lifeTime = 10f;
+    public float lifeTime = 20f;
     public float rotation = 0.5f;
-    public int value = 500;
+    public int value = 50;
     public AudioSource m_CashAudio;
 
-    public void OnObjectSpawned()
+    public void Start()
     {
         Invoke(nameof(DestroySelf), lifeTime);
     }
@@ -20,24 +20,16 @@ public class RacingCash : MonoBehaviour
         transform.Rotate(new Vector3(0, rotation, 0));
     }
 
-    // destroy for everyone on the server
     void DestroySelf()
     {
-        //NetworkServer.Destroy(gameObject);
-        gameObject.SetActive(false);
+        if(gameObject != null) Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag != "Player") return;
         other.GetComponent<RacingTankCash>().Add(value);
-        gameObject.SetActive(false);
+        DestroySelf();
     }
 
-    public void RpcConsumed()
-    {
-        // Play the explosion sound effect.
-        m_CashAudio.Play();
-        gameObject.SetActive(false);
-    }
 }
